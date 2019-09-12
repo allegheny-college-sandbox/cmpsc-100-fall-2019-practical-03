@@ -1,0 +1,26 @@
+---
+name: practical-03
+break: true
+indent: 4
+---
+src/main:
+    java:
+        date/DisplayDate.java:
+            ConfirmFileExists
+            CountMultipleLineComments --language Java --count 2
+            MatchFileFragment --fragment "TODO" --count 0 --exact
+            MatchFileFragment --fragment "mian" --count 0 --exact
+            MatchFileFragment --fragment "{YOUR NAME HERE}" --count 0 --exact
+            MatchFileRegex --regex "println\(" --count 1
+        
+writing:
+    reflection.md:
+        ConfirmFileExists
+        CountFileWords --count 100
+        CountMarkdownTags --tag "heading" --count 1
+        MatchFileFragment --fragment "TODO" --count 0 --exact
+        
+CountCommits --count 2
+ExecuteCommand --command "gradle build"
+ExecuteCommand --command "gradle -q --console plain run" 
+CountCommandOutput --command "gradle -q --console plain run" --count 10

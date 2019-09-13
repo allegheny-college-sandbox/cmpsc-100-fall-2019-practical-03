@@ -5,14 +5,15 @@ indent: 4
 ---
 src/main:
     java:
-        date/DisplayDate.java:
+        puzzle/DisplayPuzzle.java:
             ConfirmFileExists
+            CountSingleLineComments --language Java --count 0 --exact
             CountMultipleLineComments --language Java --count 2
             MatchFileFragment --fragment "TODO" --count 0 --exact
-            MatchFileFragment --fragment "mian" --count 0 --exact
             MatchFileFragment --fragment "{YOUR NAME HERE}" --count 0 --exact
-            MatchFileRegex --regex "println\(" --count 1
-        
+            MatchFileRegex --regex "print\(" --count 1 --exact
+            MatchFileRegex --regex "println\(" --count 4 --exact
+
 writing:
     reflection.md:
         ConfirmFileExists
@@ -23,4 +24,4 @@ writing:
 CountCommits --count 2
 ExecuteCommand --command "gradle build"
 ExecuteCommand --command "gradle -q --console plain run" 
-CountCommandOutput --command "gradle -q --console plain run" --count 10
+CountCommandOutput --command "gradle -q --console plain run" --count 16 --exact

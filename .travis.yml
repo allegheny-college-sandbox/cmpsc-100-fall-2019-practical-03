@@ -2,7 +2,9 @@ dist: trusty
 language: java
 sudo: false
 jdk: oraclejdk8
-script: javac src/main/java/DisplayOutput.java
+script: 
+    javac src/main/java/Pieces.java -d .
+    javac src/main/java/DisplayPuzzle.java
 before_install:
  # ensure we are using the correct version of gradle
   - wget https://services.gradle.org/distributions/gradle-4.9-bin.zip

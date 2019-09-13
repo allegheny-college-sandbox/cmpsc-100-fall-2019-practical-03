@@ -7,21 +7,16 @@ src/main:
     java:
         puzzle/DisplayPuzzle.java:
             ConfirmFileExists
-            CountSingleLineComments --language Java --count 0 --exact
+            CountSingleLineComments --language Java --count 2 --exact
             CountMultipleLineComments --language Java --count 2
             MatchFileFragment --fragment "TODO" --count 0 --exact
             MatchFileFragment --fragment "{YOUR NAME HERE}" --count 0 --exact
-            MatchFileRegex --regex "print\(" --count 1 --exact
-            MatchFileRegex --regex "println\(" --count 4 --exact
-
-writing:
-    reflection.md:
-        ConfirmFileExists
-        CountFileWords --count 100
-        CountMarkdownTags --tag "heading" --count 1
-        MatchFileFragment --fragment "TODO" --count 0 --exact
+            MatchFileRegex --regex "println\(" --count 1
+            MatchFileRegex --regex "String hat" --count 1 --exact
+            MatchFileRegex --regex "String body" --count 1 --exact
+            MatchFileRegex --regex "String tailAndLegs" --count 1 --exact
         
 CountCommits --count 2
 ExecuteCommand --command "gradle build"
 ExecuteCommand --command "gradle -q --console plain run" 
-CountCommandOutput --command "gradle -q --console plain run" --count 16 --exact
+CountCommandOutput --command "gradle -q --console plain run" --count 15

@@ -19,6 +19,6 @@ public class DisplayPuzzle {
     System.out.println(body);
     System.out.println(tailAndLegs);
     System.out.println();
-    System.out.print("      THE GATOR WIZARD STRIKES BACK!      ");
+    System.out.print("         THE GATOR WIZARD STRIKES BACK!      ");
   }
 }

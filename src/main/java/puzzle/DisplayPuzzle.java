@@ -1,4 +1,4 @@
-import puzzle.Pieces;
+package puzzle;
 
 /** This class displays the assembled puzzle.
  *

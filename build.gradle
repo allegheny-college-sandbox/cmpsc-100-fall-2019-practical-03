@@ -20,7 +20,7 @@ repositories {
 }
 
 apply plugin: 'application'
-mainClassName = 'DisplayPuzzle'
+mainClassName = 'puzzle.DisplayPuzzle'
 
 
 apply plugin: 'checkstyle'
